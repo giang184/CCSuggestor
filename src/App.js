@@ -1,5 +1,5 @@
-import Navbar from './Navbar';
-import Dashboard from './Dashboard';
+import Navbar from './components/Navbar';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
