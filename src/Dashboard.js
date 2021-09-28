@@ -18,14 +18,12 @@ const Dashboard = () => {
   useEffect(() => {
     console.log("use effect")
 
-  }, [name]);
+  }, []);
 
   return (
     <div className="home">
       <CardList cards={cards} title="All Cards" handleDelete = {handleDelete} />
       <CardList cards={cards.filter((card) => card.owner === "Andrew")} title="Andrew's Cards" handleDelete = {handleDelete} />
-      <button onClick={() => setName('gloria')}>change name</button>
-      <p>{name}</p>
     </div>
   );
 }
