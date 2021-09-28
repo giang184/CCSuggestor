@@ -1,4 +1,4 @@
-const CardList = ({cards, title}) => {
+const CardList = ({cards, title, handleDelete}) => {
   return (  
     <div className="card-list">
       <h1>{title}</h1>
@@ -12,6 +12,7 @@ const CardList = ({cards, title}) => {
                     <p key={key}>{key}: {val}%</p>
                 )
             }
+            <button onClick = {() => handleDelete(card.id)}>Delete Card</button>
           </div>
         ))}
     </div>

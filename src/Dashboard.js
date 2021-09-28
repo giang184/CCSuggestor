@@ -8,10 +8,15 @@ const Dashboard = () => {
     {name: 'chase sapphire preferred', type: 'visa', rewards: {travel: 5, restaurant: 3, grocery: 3, streaming: 3, other: 1}, owner: 'Andrew', id: 3}
   ]);
 
+  const handleDelete = (id) => {
+    const newCards = cards.filter(card => card.id !== id);
+    setCards(newCards);
+  }
+
   return (  
     <div className="home">
-      <CardList cards={cards} title="All Cards"/>
-      <CardList cards={cards.filter((card) => card.owner === "Andrew")} title="Andrew's Cards"/>
+      <CardList cards={cards} title="All Cards" handleDelete = {handleDelete} />
+      <CardList cards={cards.filter((card) => card.owner === "Andrew")} title="Andrew's Cards" handleDelete = {handleDelete} />
     </div>
   );
 }
