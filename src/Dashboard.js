@@ -10,7 +10,8 @@ const Dashboard = () => {
 
   return (  
     <div className="home">
-      <CardList cards={cards}/>
+      <CardList cards={cards} title="All Cards"/>
+      <CardList cards={cards.filter((card) => card.owner === "Andrew")} title="Andrew's Cards"/>
     </div>
   );
 }

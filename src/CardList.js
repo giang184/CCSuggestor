@@ -1,6 +1,7 @@
-const CardList = ({cards}) => {
+const CardList = ({cards, title}) => {
   return (  
     <div className="card-list">
+      <h1>{title}</h1>
       {cards.map((card) => (
           <div className="card-preview" key={card.id}>
             <h2>{card.name}</h2>
