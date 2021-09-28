@@ -22,8 +22,8 @@ const Dashboard = () => {
 
   return (
     <div className="home">
-      <CardList cards={cards} title="All Cards" handleDelete = {handleDelete} />
-      <CardList cards={cards.filter((card) => card.owner === "Andrew")} title="Andrew's Cards" handleDelete = {handleDelete} />
+      <CardList title="All Cards" handleDelete = {handleDelete} />
+      {/* <CardList cards={cards.filter((card) => card.owner === "Andrew")} title="Andrew's Cards" handleDelete = {handleDelete} /> */}
     </div>
   );
 }
