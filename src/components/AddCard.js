@@ -11,7 +11,6 @@ const AddCard = () => {
   const [percent2,setPercent2] = useState()
   // const [percent3,setPercent3] = useState()
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const collectionRef = projectFirestore.collection('cards');
@@ -30,19 +29,22 @@ const AddCard = () => {
     <div className="create">
       <h2>Add new card</h2>
       <form onSubmit={handleSubmit}>
-        <label>Card Name</label>
+        <label>Card Name: </label>
         <input 
           type="text"
           required
           onChange={(e) => setName(e.target.value)}
         />
-        <label>Card Type</label>
-        <input 
-          type="text" 
-          required
+        <div />
+        <label>Card Type: </label>
+        <select 
+          value={type}
           onChange={(e) => setType(e.target.value)}
-        />
-
+        >
+          <option value="visa">Visa</option>
+          <option value="mastercard">Mastercard</option>
+        </select>
+        <div />
         <div>Rewards:</div>
         <select 
           value={category1}
@@ -71,7 +73,6 @@ const AddCard = () => {
           type="text"
           onChange={(e) => setPercent2(e.target.value)}
         />
-
         <div><button>Add Card</button></div>
         
       </form>
