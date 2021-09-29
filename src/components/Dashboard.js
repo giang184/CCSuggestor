@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import CardList from './CardList';
 import useFirestore from '../hooks/useFirestore';
 
@@ -15,11 +15,6 @@ const Dashboard = () => {
     const newCards = cards.filter(card => card.id !== id);
     setCards(newCards);
   }
-
-  useEffect(() => {
-    console.log("use effect")
-
-  }, []);
 
   return (
     <div className="home">
