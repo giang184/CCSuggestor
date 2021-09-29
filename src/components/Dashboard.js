@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import CardList from './CardList';
+import useFirestore from '../hooks/useFirestore';
 
 const Dashboard = () => {
   const [cards, setCards] = useState([

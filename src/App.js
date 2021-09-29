@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
+import AddCard from './components/AddCard';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Navbar />
       <div className="content">
         <Dashboard />
+        <AddCard />
       </div>
     </div>
   );
