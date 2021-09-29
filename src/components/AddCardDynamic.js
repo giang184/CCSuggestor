@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { projectFirestore } from '../firebase/config';
+import {useHistory} from 'react-router-dom';
 
 const AddCardDynamic = () => {
+  const history = useHistory();
   
   const categories = [
     'Gas',
@@ -48,7 +50,7 @@ const AddCardDynamic = () => {
   }
 
   const addCategory = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     
     setFormState({
       ...formState,
@@ -62,15 +64,15 @@ const AddCardDynamic = () => {
   }
 
   const removeCategory = (event, category) => {
-    event.preventDefault()
+    event.preventDefault();
     const newFormState = {
       ...formState,
       categories: {
         ...formState.categories,
       },
     }
-    delete newFormState.categories[category]
-    setFormState(newFormState)
+    delete newFormState.categories[category];
+    setFormState(newFormState);
   }
 
   const updateValueForCategory = (category, value) => {
@@ -84,13 +86,14 @@ const AddCardDynamic = () => {
   }
 
   const onSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const collectionRef = projectFirestore.collection('cards');
-    collectionRef.add(formState)
+    collectionRef.add(formState);
+    history.push('/');
   }
 
   return (
-    <div className="app">
+    <div className="create">
       <form onSubmit={onSubmit}>
         <div className="form-name">
           <label>Credit Card Name: </label>
@@ -127,8 +130,10 @@ const AddCardDynamic = () => {
         {Object.keys(formState.categories).length >0 &&
           <fieldset>
             <legend>Set Category's Cash Back Percentage</legend>
-            {Object.keys(formState.categories).map(category => (
+            {Object.keys(formState.categories).map((category, index) => (
               <div key={category}>
+              <fieldset>
+                <legend>category #{index+1}</legend>
                 <label>{category}</label>
                 <input 
                   type="number"
@@ -137,11 +142,12 @@ const AddCardDynamic = () => {
                 />
 
                 <button onClick={(event) => removeCategory(event, category)}>Remove Category</button>
+              </fieldset>
               </div>
             ))}
           </fieldset>
         }
-        <button type="submit">Create Card</button>
+        <button className="submit" type="submit">Create Card</button>
       </form>
     </div>
   )
