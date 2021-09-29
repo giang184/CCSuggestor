@@ -52,3 +52,15 @@
 .card-preview a{
   text-decoration: none;
 }
+
+.card-details h1 {
+  font-size: 25px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.card-details h4 {
+  margin-bottom: 10px;
+}
+.card-details div {
+  margin: 20px 0;
+}
