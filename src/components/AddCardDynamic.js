@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { projectFirestore } from '../firebase/config';
 
-
 const AddCardDynamic = () => {
   
   const categories = [
@@ -34,14 +33,14 @@ const AddCardDynamic = () => {
 
   const [selectedCategory, setSelectedCategory] = useState(0)
 
-  const updateName = (event) => {
+  const addName = (event) => {
     setFormState({
       ...formState,
       name: event.target.value,
     })
   }
 
-  const updateType = (event) => {
+  const addType = (event) => {
     setFormState({
       ...formState,
       type: event.target.value,
@@ -64,16 +63,13 @@ const AddCardDynamic = () => {
 
   const removeCategory = (event, category) => {
     event.preventDefault()
-
     const newFormState = {
       ...formState,
       categories: {
         ...formState.categories,
       },
     }
-
     delete newFormState.categories[category]
-
     setFormState(newFormState)
   }
 
@@ -89,8 +85,6 @@ const AddCardDynamic = () => {
 
   const onSubmit = (event) => {
     event.preventDefault()
-    console.log(formState)
-
     const collectionRef = projectFirestore.collection('cards');
     collectionRef.add(formState)
   }
@@ -104,14 +98,14 @@ const AddCardDynamic = () => {
             type="text"
             required
             value={formState.name}
-            onChange={updateName}
+            onChange={addName}
           />
         </div>
         <div className="form-type">
           <label>Card Type: </label>
           <select
             value={formState.type}
-            onChange={updateType}
+            onChange={addType}
           >
             <option value="visa">Visa</option>
             <option value="mastercard">Mastercard</option>
@@ -120,7 +114,6 @@ const AddCardDynamic = () => {
 
         <fieldset>
           <legend>Choose Cash Back Categories</legend>
-
           <select 
             value={selectedCategory}
             onChange={(event) => setSelectedCategory(parseInt(event.target.value))}
@@ -129,28 +122,25 @@ const AddCardDynamic = () => {
               <option key={category} value={i}>{category}</option>
             ))}
           </select>
-
           <button onClick={addCategory}>Add</button>
         </fieldset>
         {Object.keys(formState.categories).length >0 &&
-        <fieldset>
-          <legend>Set Category's Cash Back Percentage</legend>
+          <fieldset>
+            <legend>Set Category's Cash Back Percentage</legend>
+            {Object.keys(formState.categories).map(category => (
+              <div key={category}>
+                <label>{category}</label>
+                <input 
+                  type="number"
+                  value={formState.categories[category]} 
+                  onChange={(event) => updateValueForCategory(category, event.target.value)}
+                />
 
-          {Object.keys(formState.categories).map(category => (
-            <div key={category}>
-              <label>{category}</label>
-              <input 
-                type="number"
-                value={formState.categories[category]} 
-                onChange={(event) => updateValueForCategory(category, event.target.value)}
-              />
-
-              <button onClick={(event) => removeCategory(event, category)}>Remove Category</button>
-            </div>
-          ))}
-        </fieldset>
+                <button onClick={(event) => removeCategory(event, category)}>Remove Category</button>
+              </div>
+            ))}
+          </fieldset>
         }
-
         <button type="submit">Create Card</button>
       </form>
     </div>
