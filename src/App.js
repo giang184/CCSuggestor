@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
 import AddCard from './components/AddCard';
+import AddCardDynamic from './components/AddCardDynamic';
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <Navbar />
       <div className="content">
         <Dashboard />
-        <AddCard />
+        {/* <AddCard /> */}
+        <AddCardDynamic />
       </div>
     </div>
   );
