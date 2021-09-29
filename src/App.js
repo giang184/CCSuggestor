@@ -1,18 +1,22 @@
 import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
-import AddCard from './components/AddCard';
 import AddCardDynamic from './components/AddCardDynamic';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <Dashboard />
-        {/* <AddCard /> */}
-        <AddCardDynamic />
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route path="/">
+              <Dashboard />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
