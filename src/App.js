@@ -10,8 +10,11 @@ function App() {
         <Navbar />
         <div className="content">
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               <Dashboard />
+            </Route>
+            <Route path="/create">
+              <AddCardDynamic />
             </Route>
           </Switch>
         </div>
