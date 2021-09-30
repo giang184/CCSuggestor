@@ -93,6 +93,8 @@ const AddCardDynamic = () => {
   }
 
   return (
+    <div className="add-card-dynamic">
+      <h2>Add Custom Card:</h2>
     <div className="create">
       <form onSubmit={onSubmit}>
         <div className="form-name">
@@ -149,6 +151,7 @@ const AddCardDynamic = () => {
         }
         <button className="submit" type="submit">Create Card</button>
       </form>
+    </div>
     </div>
   )
 }
