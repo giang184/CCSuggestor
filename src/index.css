@@ -5,6 +5,7 @@
   margin: 0;
   font-family: "Quicksand";
   color: #333;
+  background-color: rgb(245, 239, 239);
 }
 .navbar {
   padding: 20px;
@@ -43,7 +44,7 @@
 .card-preview:hover {
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
 }
-.card-preview h2 {
+h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 8px;
@@ -76,9 +77,9 @@
 }
 
 .create {
-  max-width: 400px;
+  max-width: 300px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 .create label {
   text-align: left;
@@ -113,4 +114,13 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.card-template {
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.card {
+  width: auto;
 }
