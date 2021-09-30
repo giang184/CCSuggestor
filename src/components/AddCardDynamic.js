@@ -8,7 +8,7 @@ const AddCardDynamic = () => {
   const categories = [
     'Gas',
     'Restaurant',
-    'travel',
+    'Travel',
     'Grocery Stores',
     'Wholesale Clubs',
     'Streaming Services',
@@ -23,7 +23,7 @@ const AddCardDynamic = () => {
     'Drug Stores',
     'Internet/Phone/Cable',
     'Best Buy',
-    'All other purchases'
+    'All Other Purchases'
   ]
 
   const [formState, setFormState] = useState({

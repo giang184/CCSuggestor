@@ -1,31 +1,79 @@
+import { useState } from 'react';
+import { projectFirestore } from '../firebase/config';
+import {useHistory} from 'react-router-dom';
+import unlimited from './../img/chase-freedom-unlimited.png'
+import flex from './../img/chase-freedom-flex.png'
+import sapphire from './../img/chase-sapphire-reserve.png'
 
 const AddCardTemplates = () => {
+    const history = useHistory();
+
+  const [formState, setFormState] = useState({
+    name: '',
+    type: 'visa',
+    categories: {
+    }
+  })
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    setFormState({
+      ...formState,
+      name: 'Chase-Freedom-Unlimited',
+      type: 'visa',
+      categories: {
+        Travel:5,
+        Restaurant:5,
+        AllOtherPurchases:1,
+      }
+    }, () => {
+      console.log(formState)
+      // const collectionRef = projectFirestore.collection('cards');
+      // collectionRef.add(formState);
+      // history.push('/');
+    });
+  }
+
   return ( 
     <div className="add-card-templates">
         <h2>Choose From Default List</h2>
         <div className="d-flex flex-row">
           <div className="card-template">
-            <img src='https://thumbor.forbes.com/thumbor/fit-in/600x300/https://www.forbes.com/advisor/wp-content/uploads/2019/04/874a5450-5701-11e9-982f-0172e11a2fba.png' class="card-img-top" alt="Chase-Freedom-Unlimited"/>
+            <img src={unlimited} class="card-img" alt="Chase-Freedom-Unlimited"/>
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p className="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <h5 className="card-title">Rewards</h5>
+              <ul>
+                <li>Travel: 5%</li>
+                <li>Dining: 3%</li>
+                <li>All Other: 1.5%</li>
+              </ul>
             </div>
           </div>
           <div className="card-template">
-            <img src='https://thumbor.forbes.com/thumbor/fit-in/600x300/https://www.forbes.com/advisor/wp-content/uploads/2019/04/874a5450-5701-11e9-982f-0172e11a2fba.png' class="card-img-top" alt="Chase-Freedom-Unlimited"/>
+            <img src={flex} class="card-img" alt="Chase-Freedom-Unlimited"/>
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p className="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <h5 className="card-title">Rewards</h5>
+              <ul>
+                <li>Walmart: 5%</li>
+                <li>Paypal: 5%</li>
+                <li>Travel: 5%</li>
+                <li>Dining: 3%</li>
+                <li>All Other: 1%</li>
+              </ul>
+              <button onClick={handleClick}>Add</button>
             </div>
           </div>
           <div className="card-template">
-            <img src='https://thumbor.forbes.com/thumbor/fit-in/600x300/https://www.forbes.com/advisor/wp-content/uploads/2019/04/874a5450-5701-11e9-982f-0172e11a2fba.png' class="card-img-top" alt="Chase-Freedom-Unlimited"/>
+            <img src={sapphire} class="card-img" alt="Chase-Freedom-Unlimited"/>
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p className="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <h5 className="card-title">Rewards</h5>
+              <ul>
+                <li>Travel: 5%</li>
+                <li>Dining: 3%</li>
+                <li>Grocery Stores: 3%</li>
+                <li>Streaming Services: 3%</li>
+                <li>All Other: 1%</li>
+              </ul>
             </div>
           </div>
         </div>
