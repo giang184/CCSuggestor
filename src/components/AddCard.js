@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { projectFirestore } from '../firebase/config';
+import React from 'react';
 import AddCardDynamic from './AddCardDynamic';
 import AddCardTemplates from './AddCardTemplates';
 
