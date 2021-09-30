@@ -3,6 +3,7 @@ import Dashboard from './components/Dashboard';
 import AddCardDynamic from './components/AddCardDynamic';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import CardDetails from './components/CardDetails';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/cards/:id">
               <CardDetails />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </div>
