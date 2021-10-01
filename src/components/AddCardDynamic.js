@@ -9,21 +9,21 @@ const AddCardDynamic = () => {
     'Gas',
     'Restaurant',
     'Travel',
-    'Grocery Stores',
-    'Wholesale Clubs',
-    'Streaming Services',
-    'Online Shopping',
-    'Home Improvement',
-    'Department Stores',
+    'Grocery_Stores',
+    'Wholesale_Clubs',
+    'Streaming_Services',
+    'Online_Shopping',
+    'Home_Improvement',
+    'Department_Stores',
     'Paypal',
     'Target',
     'Walmart',
     'Target',
     'Amazon',
-    'Drug Stores',
+    'Drug_Stores',
     'Internet/Phone/Cable',
-    'Best Buy',
-    'All Other Purchases'
+    'Best_Buy',
+    'All_Other_Purchases'
   ]
 
   const [formState, setFormState] = useState({
