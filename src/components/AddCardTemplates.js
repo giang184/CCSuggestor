@@ -1,5 +1,6 @@
 import { projectFirestore } from '../firebase/config';
 import {useHistory} from 'react-router-dom';
+import { Grid, Row, Col } from "react-flexbox-grid";
 import unlimited from './../img/chase-freedom-unlimited.png'
 import flex from './../img/chase-freedom-flex.png'
 import sapphire from './../img/chase-sapphire-reserve.png'
@@ -50,56 +51,32 @@ const AddCardTemplates = () => {
 
   return ( 
     <div className="card-list">
-        <h1>Choose From Selected List:</h1>
-        <div className="d-flex flex-row">
-        {dir.map((card) => (
-          <div className="card-preview" onClick={(event) => handleClick(event, card)}>
-            <div className="card-template-list">
-              <h2>{card.name}</h2>
-              <img src={card.img} class="card-img" alt={card.name}/>
-              <div className="card-body">
-                <h5 className="card-title">Cash Back Rewards</h5>
-                <ul>
-                  {
-                    Object.entries(card.categories).sort((a, b) => a[1] - b[1]).reverse().map(([key, val]) => 
-                        <li key={key}>{key}: {val}%</li>
-                    )
-                  }
-                </ul>
+      <h1>Choose From Selected List:</h1>
+      <Grid fluid>
+        <Row>
+          {dir.map((card) => (
+            <Col sm={12} md={6} lg={4}>
+              <div className="card-preview" onClick={(event) => handleClick(event, card)}>
+                <div className="card-template-list">
+                  <h2>{card.name}</h2>
+                  <img src={card.img} class="card-img" alt={card.name}/>
+                  <div className="card-body">
+                    <h5 className="card-title">Cash Back Rewards</h5>
+                    <ul>
+                      {
+                        Object.entries(card.categories).sort((a, b) => a[1] - b[1]).reverse().map(([key, val]) => 
+                            <li key={key}>{key}: {val}%</li>
+                        )
+                      }
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </Col>
           ))}
-          {/*<div className="card-preview" onClick={(event) => handleClick(event, dir.flex)}>
-            <h5 style={{'text-align': "center", color: "#f1356d"}}>Chase Freedom Flex</h5>
-            <img src={dir.flex.img} class="card-img" alt="Chase-Freedom-Flex"/>
-            <div className="card-body">
-              <h5 className="card-title">Cash Back Rewards</h5>
-              <ul>
-                <li>Walmart: 5%</li>
-                <li>Paypal: 5%</li>
-                <li>Travel: 5%</li>
-                <li>Dining: 3%</li>
-                <li>All Other: 1%</li>
-              </ul>
-            </div>
-          </div>
-          <div className="card-preview">
-          <h5 style={{'text-align': "center", color: "#f1356d"}}>Chase Sapphire Reserve</h5>
-            <img src={sapphire} class="card-img" alt="Chase-Sapphire-Reserve"/>
-            <div className="card-body">
-              <h5 className="card-title">Cash Back Rewards</h5>
-              <ul>
-                <li>Travel: 5%</li>
-                <li>Dining: 3%</li>
-                <li>Grocery Stores: 3%</li>
-                <li>Streaming Services: 3%</li>
-                <li>All Other: 1%</li>
-              </ul>
-            </div>
-          </div> */}
-        </div>
-        </div> 
+        </Row>
+      </Grid>
+    </div> 
   );
 }
 export default AddCardTemplates;
