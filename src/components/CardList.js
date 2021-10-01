@@ -25,12 +25,11 @@ const CardList = () => {
                 {!card.img && card.type === 'mastercard' && <img src={mastercard} class="card-img" alt="mastercard"/>}
                 {!card.img && card.type === 'discover' && <img src={discover} class="card-img" alt="discover"/>}
                 {!card.img && card.type === 'amex' && <img src={amex} class="card-img" alt="american express"/>}
-          
                 <div className="card-body">
                   <h5 className="card-title">Cash Back Rewards:</h5>
                   <ul>
                     {
-                        Object.entries(card.categories).map(([key, val]) => 
+                        Object.entries(card.categories).sort((a, b) => a[1] - b[1]).reverse().map(([key, val]) => 
                             <li key={key}>{key}: {val}%</li>
                         )
                     }
