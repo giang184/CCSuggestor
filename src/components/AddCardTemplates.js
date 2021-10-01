@@ -4,9 +4,12 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import unlimited from './../img/chase-freedom-unlimited.png'
 import flex from './../img/chase-freedom-flex.png'
 import sapphire from './../img/chase-sapphire-reserve.png'
-import amexBlue from './../img/amex-blue-cash.jpg'
+import amexPreferred from './../img/amex-blue-preferred.jpg'
+import amexEveryday from './../img/amex-blue-everyday.jfif'
 import discoverit from './../img/discover-it.jfif'
 import savor from './../img/capital-one-savor.png'
+import wellsFargo from './../img/wells-fargo-active.png'
+import citi from './../img/citi-double-cash.jpg'
 
 const AddCardTemplates = () => {
   const history = useHistory();
@@ -44,18 +47,6 @@ const AddCardTemplates = () => {
         All_Other_Purchases: 1,
       },
       img: sapphire,
-    },  
-    {
-      name: 'Amex Blue Cash', 
-      type: 'amex', 
-      categories: {
-        Grocery_Stores: 6,
-        Streaming_Services: 6,
-        Transit: 3,
-        Gas: 3,
-        All_Other_Purchases: 1,
-      },
-      img: amexBlue,
     },
     {
       name: 'Discover it', 
@@ -70,7 +61,7 @@ const AddCardTemplates = () => {
     },
     {
       name: 'Capital One Savor', 
-      type: 'discover', 
+      type: 'mastercard', 
       categories: {
         Entertainment: 3,
         Dining: 3,
@@ -79,6 +70,45 @@ const AddCardTemplates = () => {
         All_Other_Purchases: 1,
       },
       img: savor,
+    },  
+    {
+      name: 'Wells Fargo Active Cash', 
+      type: 'visa', 
+      categories: {
+        All_Other_Purchases: 2,
+      },
+      img: wellsFargo,
+    },  
+    {
+      name: 'Citi Double Cash', 
+      type: 'mastercard', 
+      categories: {
+        All_Other_Purchases: 2,
+      },
+      img: citi,
+    },  
+    {
+      name: 'Amex Blue Preferred', 
+      type: 'amex', 
+      categories: {
+        Grocery_Stores: 6,
+        Streaming_Services: 6,
+        Transit: 3,
+        Gas: 3,
+        All_Other_Purchases: 1,
+      },
+      img: amexPreferred,
+    },
+    {
+      name: 'Amex Blue Everyday', 
+      type: 'amex', 
+      categories: {
+        Grocery_Stores: 3,
+        Department_Stores: 2,
+        Gas: 2,
+        All_Other_Purchases: 1,
+      },
+      img: amexEveryday,
     },
   ]
 
