@@ -94,7 +94,7 @@ const AddCardDynamic = () => {
 
   return (
     <div className="add-card-dynamic">
-      <h2>Add Custom Card:</h2>
+      <h1>Add Custom Card:</h1>
     <div className="create">
       <form onSubmit={onSubmit}>
         <div className="form-name">
@@ -114,6 +114,8 @@ const AddCardDynamic = () => {
           >
             <option value="visa">Visa</option>
             <option value="mastercard">Mastercard</option>
+            <option value="discover">Discover</option>
+            <option value="amex">American Express</option>
           </select>
         </div>
 
