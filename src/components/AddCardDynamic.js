@@ -132,7 +132,7 @@ const AddCardDynamic = () => {
 
   return (
     <div className="add-card-dynamic">
-      <h1>Add Custom Card:</h1>
+      <h1>Custom Add A Card:</h1>
       <div className="create">
         <form onSubmit={onSubmit}>
           <Grid>

@@ -6,15 +6,14 @@ import visa from './../img/visa.png'
 import mastercard from './../img/mastercard.png'
 import amex from './../img/amex.png'
 import discover from './../img/discover.png'
+import Suggest from './Suggest'
 
 const CardList = () => {
   const {cards} = useFirestore('cards');
   return (  
     <div className="card-list">
       {cards.length > 0 && <h1>Your Wallet:</h1>}
-      {cards.length === 0 && <div>
-      <h1>Your Wallet:</h1>
-      <p><em>Click "Add New Card" to add a card!</em></p></div>}
+      {cards.length === 0 && <Suggest />}
       <Grid fluid>
         <Row>
           {cards.map((card) => (

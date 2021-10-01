@@ -6,6 +6,7 @@ const Navbar = () => {
       <h1>Credit Card Suggestor</h1>
       <div className="links">
         <Link to="/">Home</Link>
+        <Link to="/suggest">Suggest</Link>
         <Link to="/create">Add New Card</Link>
         </div>
     </nav>
