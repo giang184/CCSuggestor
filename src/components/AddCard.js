@@ -6,8 +6,8 @@ const AddCard = () => {
 
   return (  
     <React.Fragment>
-      <AddCardTemplates />
       <AddCardDynamic />
+      <AddCardTemplates />
     </React.Fragment>
   );
 }
