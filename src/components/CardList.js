@@ -16,8 +16,8 @@ const CardList = () => {
       {cards.map((card) => (
           <div className="card-preview" key={card.id}>
             <Link to={`/cards/${card.id}`}>
-              <div className="card-template">
-                <h1 style={{'text-align': "center", color: "gray"}}>{card.name}</h1>
+              <div className="card-template-list">
+                <h5 style={{'text-align': "center", color: "#f1356d"}}>{card.name}</h5>
                 {card.type === 'visa' && <img src={visa} class="card-img" alt="Visa"/>}
                 {card.type === 'mastercard' && <img src={mastercard} class="card-img" alt="Visa"/>}
                   

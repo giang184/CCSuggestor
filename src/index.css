@@ -118,10 +118,21 @@ h2 {
   cursor: pointer;
 }
 
-.card-template {
+.card-template-list {
   justify-content: space-between;
   margin: 10px;
   width: 250px;
+}
+
+.card-template-add {
+  justify-content: space-between;
+  margin: 10px;
+  width: 250px;
+  cursor: pointer;
+}
+
+.card-template-add:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
 }
 
 .card {
