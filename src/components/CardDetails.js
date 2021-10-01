@@ -18,7 +18,8 @@ const CardDetails = () => {
       <div>
         {card &&
         <article>
-          <h1>{card.name}</h1>
+          <h2 style={{color: "#f1356d"}}>{card.name}</h2>
+          <img src={card.img} class="card-img" alt={card.name}/>
           <h4>Card Type: {card.type}</h4>
           <h4>Rewards: </h4>
           <ul>
