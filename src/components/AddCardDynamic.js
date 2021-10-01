@@ -120,7 +120,7 @@ const AddCardDynamic = () => {
         </div>
 
         <fieldset>
-          <legend>Choose Cash Back Categories</legend>
+          <legend>Add Cash Back Category</legend>
           <select 
             value={selectedCategory}
             onChange={(event) => setSelectedCategory(parseInt(event.target.value))}

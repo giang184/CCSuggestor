@@ -49,20 +49,24 @@ const AddCardTemplates = () => {
     };
 
   return ( 
-    <div className="add-card-templates">
-        <h1>Choose From Default List</h1>
+    <div className="card-list">
+        <h1>Choose From Selected List:</h1>
         <div className="d-flex flex-row">
         {dir.map((card) => (
           <div className="card-preview" onClick={(event) => handleClick(event, card)}>
-          <h5 style={{'text-align': "center", color: "#f1356d"}}>{card.name}</h5>
-            <img src={card.img} class="card-img" alt={card.name}/>
-            <div className="card-body">
-              <h5 className="card-title">Cash Back Rewards</h5>
-              <ul>
-                {/* <li>Travel: 5%</li>
-                <li>Dining: 3%</li>
-                <li>All Other: 1.5%</li> */}
-              </ul>
+            <div className="card-template-list">
+              <h2>{card.name}</h2>
+              <img src={card.img} class="card-img" alt={card.name}/>
+              <div className="card-body">
+                <h5 className="card-title">Cash Back Rewards</h5>
+                <ul>
+                  {
+                    Object.entries(card.categories).sort((a, b) => a[1] - b[1]).reverse().map(([key, val]) => 
+                        <li key={key}>{key}: {val}%</li>
+                    )
+                  }
+                </ul>
+              </div>
             </div>
           </div>
           ))}
