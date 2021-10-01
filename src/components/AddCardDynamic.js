@@ -24,6 +24,8 @@ const AddCardDynamic = () => {
     'Drug_Stores',
     'Internet/Phone/Cable',
     'Best_Buy',
+    'Transit',
+    'Entertainment',
     'All_Other_Purchases'
   ]
 

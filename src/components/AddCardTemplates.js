@@ -4,6 +4,9 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import unlimited from './../img/chase-freedom-unlimited.png'
 import flex from './../img/chase-freedom-flex.png'
 import sapphire from './../img/chase-sapphire-reserve.png'
+import amexBlue from './../img/amex-blue-cash.jpg'
+import discoverit from './../img/discover-it.jfif'
+import savor from './../img/capital-one-savor.png'
 
 const AddCardTemplates = () => {
   const history = useHistory();
@@ -12,33 +15,71 @@ const AddCardTemplates = () => {
       name: 'Chase Freedom Unlimited', 
       type: 'visa', 
       categories: {
-        Travel:5, 
-        Restaurant:5,
-        All_Other_Purchases: 1
+        Drug_Stores: 3,
+        Restaurant:3,
+        All_Other_Purchases: 1.5
       },
-      img: unlimited},
+      img: unlimited,
+    },
     {
       name: 'Chase Freedom Flex', 
-      type: 'visa', 
+      type: 'mastercard', 
       categories: {
-        Walmart: 5,
         Paypal: 5,
-        Travel: 5,
+        Walmart: 5,
         Dining: 3,
+        Drug_Stores: 3,
         All_Other_Purchases: 1
       },
-      img: flex},
+      img: flex,
+    },
     {
       name: 'Chase Sapphire Reserve', 
       type: 'visa', 
       categories: {
-        Travel: 5,
+        Dining: 3,
+        Grocery_Stores: 3,
+        Streaming_Services: 3,
+        Travel: 2,
+        All_Other_Purchases: 1,
+      },
+      img: sapphire,
+    },  
+    {
+      name: 'Amex Blue Cash', 
+      type: 'amex', 
+      categories: {
+        Grocery_Stores: 6,
+        Streaming_Services: 6,
+        Transit: 3,
+        Gas: 3,
+        All_Other_Purchases: 1,
+      },
+      img: amexBlue,
+    },
+    {
+      name: 'Discover it', 
+      type: 'discover', 
+      categories: {
+        Amazon: 5,
+        Walmart: 5,
+        Target: 5,
+        All_Other_Purchases: 1,
+      },
+      img: discoverit,
+    },
+    {
+      name: 'Capital One Savor', 
+      type: 'discover', 
+      categories: {
+        Entertainment: 3,
         Dining: 3,
         Grocery_Stores: 3,
         Streaming_Services: 3,
         All_Other_Purchases: 1,
       },
-      img: sapphire},  
+      img: savor,
+    },
   ]
 
   const handleClick = (event, card) => {
