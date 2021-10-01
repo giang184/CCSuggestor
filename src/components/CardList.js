@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFirestore from '../hooks/useFirestore';
+import visa from './../img/visa.png'
+import mastercard from './../img/mastercard.png'
 
 const CardList = () => {
   const {cards} = useFirestore('cards');
@@ -10,20 +12,30 @@ const CardList = () => {
       {cards.length === 0 && <div>
       <h1>Your Wallet:</h1>
       <p><em>Click "Add New Card" to add a card!</em></p></div>}
+      <div className="d-flex flex-row">
       {cards.map((card) => (
           <div className="card-preview" key={card.id}>
             <Link to={`/cards/${card.id}`}>
-              <h2>{card.name}</h2>
-              <h4>TYPE: {card.type}</h4>
-              {/* <h4>REWARDS: </h4>
-              {
-                  Object.entries(card.rewards).map(([key, val]) => 
-                      <p key={key}>{key}: {val}%</p>
-                  )
-              } */}
+              <div className="card-template">
+                <h1 style={{'text-align': "center", color: "gray"}}>{card.name}</h1>
+                {card.type === 'visa' && <img src={visa} class="card-img" alt="Visa"/>}
+                {card.type === 'mastercard' && <img src={mastercard} class="card-img" alt="Visa"/>}
+                  
+                <div className="card-body">
+                  <h5 className="card-title">Cash Back Rewards:</h5>
+                  <ul>
+                    {
+                        Object.entries(card.categories).map(([key, val]) => 
+                            <li key={key}>{key}: {val}%</li>
+                        )
+                    }
+                  </ul>
+                </div>
+              </div>
             </Link>
           </div>
         ))}
+      </div>
     </div>
   );
 }
