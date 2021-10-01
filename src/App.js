@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import Dashboard from './components/Dashboard';
+import Home from './components/Home';
 import AddCard from './components/AddCard';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import CardDetails from './components/CardDetails';
@@ -13,7 +13,7 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path="/">
-              <Dashboard />
+              <Home />
             </Route>
             <Route path="/create">
               <AddCard />
