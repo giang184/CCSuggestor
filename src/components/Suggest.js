@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Result from './Result';
 
 const Suggest = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Gas')
+  const [selectedCategory, setSelectedCategory] = useState('')
 
   const changeCategory = (event) => {
     event.preventDefault();

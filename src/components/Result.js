@@ -8,24 +8,14 @@ import amex from './../img/amex.png'
 import discover from './../img/discover.png'
 
 const Result = ({selectedCategory}) => {
-  const {cards} = useFirestore('cards');
-  // console.log(cards);
-  // const newCards = cards.sort(
-  //   function (a, b) {
-  //   return a.name - b.name;
-  // }
-  // );
-  // console.log(cards);
-
-  let students = [
-    { name: "Alex",   grade: 15 },
-    { name: "Devlin", grade: 15 },
-    { name: "Eagle",  grade: 13 },
-    { name: "Sam",    grade: 14 },
-  ];
-  console.log(students);
-  students.sort((firstItem, secondItem) => firstItem.grade - secondItem.grade);
-  console.log(students);
+  let {cards} = useFirestore('cards');
+  console.log(cards);
+  const newCards = cards.sort(
+    function (a, b) {
+    return a.categories - b.categories.Paypal;
+  }
+  );
+  console.log(cards);
 
   return (  
     <div className="card-list">

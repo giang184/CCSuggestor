@@ -13,7 +13,6 @@ const Home = () => {
   return (  
     <div className="card-list">
       {cards.length > 0 && <h1>What's In Your Wallet:</h1>}
-      {cards.length === 0 && <Suggest />}
       <Grid fluid>
         <Row>
           {cards.map((card) => (
