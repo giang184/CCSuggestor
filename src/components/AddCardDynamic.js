@@ -81,6 +81,24 @@ const AddCardDynamic = () => {
         return discover;
       case "amex-generic":
         return amex;
+      case "unlimited":
+        return unlimited;
+      case "flex":
+        return flex;
+      case "sapphire":
+        return sapphire;
+      case "amexPreferred":
+        return amexPreferred;
+      case "amexEveryday":
+        return amexEveryday;
+      case "discoverit":
+        return discoverit;
+      case "savor":
+        return savor;
+      case "wellsFargo":
+        return wellsFargo;
+      case "citi":
+        return citi;
       default:
         return visa;
     }
@@ -170,6 +188,15 @@ const AddCardDynamic = () => {
                       <option value="mastercard-generic">Mastercard - Generic</option>
                       <option value="discover-generic">Discover - Generic</option>
                       <option value="amex-generic">American Express - Generic</option>
+                      <option value="unlimited">Chase Freedom Unlimited</option>
+                      <option value="flex">Chase Freedom Flex</option>
+                      <option value="sapphire">Chase Freedom Sapphire</option>
+                      <option value="discoverit">Discover it</option>
+                      <option value="savor">Capital One Savor</option>
+                      <option value="wellsFargo">Wells Fargo Active Cash</option>
+                      <option value="citi">Citi Double Cash</option>
+                      <option value="amexPreferred">American Express Blue Preferred</option>
+                      <option value="amexEveryday">American Express Blue Blue Everyday</option>
                     </select>
                   </div>
                 </fieldset>
