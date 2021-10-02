@@ -8,11 +8,11 @@ import amex from './../img/amex.png'
 import discover from './../img/discover.png'
 import Suggest from './Suggest'
 
-const CardList = () => {
+const Home = () => {
   const {cards} = useFirestore('cards');
   return (  
     <div className="card-list">
-      {cards.length > 0 && <h1>Your Wallet:</h1>}
+      {cards.length > 0 && <h1>What's In Your Wallet:</h1>}
       {cards.length === 0 && <Suggest />}
       <Grid fluid>
         <Row>
@@ -47,4 +47,4 @@ const CardList = () => {
     </div>
   );
 }
-export default CardList;
+export default Home;

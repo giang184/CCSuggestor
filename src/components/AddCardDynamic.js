@@ -32,7 +32,6 @@ const AddCardDynamic = () => {
     'Paypal',
     'Target',
     'Walmart',
-    'Target',
     'Amazon',
     'Drug_Stores',
     'Internet/Phone/Cable',
