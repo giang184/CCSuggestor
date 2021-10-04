@@ -6,7 +6,6 @@ import visa from './../img/visa.png'
 import mastercard from './../img/mastercard.png'
 import amex from './../img/amex.png'
 import discover from './../img/discover.png'
-import Suggest from './Suggest'
 
 const Home = () => {
   const {cards} = useFirestore('cards');

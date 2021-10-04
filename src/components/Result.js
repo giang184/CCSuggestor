@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFirestore from '../hooks/useFirestore';
-import { Grid, Row, Col } from "react-flexbox-grid";
 import visa from './../img/visa.png'
 import mastercard from './../img/mastercard.png'
 import amex from './../img/amex.png'
@@ -9,9 +8,10 @@ import discover from './../img/discover.png'
 
 const Result = ({selectedCategory}) => {
   const {cards} = useFirestore('cards');
+  console.log(cards);
   cards.sort(function(a, b) {
-    const itemA = a.categories[selectedCategory] ? a.categories[selectedCategory]: 0;
-    const itemB = b.categories[selectedCategory] ? b.categories[selectedCategory]: 0;
+    const itemA = Math.max(a.categories.All_Other_Purchases ? a.categories.All_Other_Purchases: 0, a.categories[selectedCategory] ? a.categories[selectedCategory]: 0);
+    const itemB = Math.max(b.categories.All_Other_Purchases ? b.categories.All_Other_Purchases: 0, b.categories[selectedCategory] ? b.categories[selectedCategory]: 0);
     console.log(itemA);
     if (itemA > itemB) {
       return -1;
