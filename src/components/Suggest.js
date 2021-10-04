@@ -8,26 +8,20 @@ const Suggest = () => {
     event.preventDefault();
     setSelectedCategory(event.target.value);
   }
-  
-  const onSubmit = (event) => {
-    event.preventDefault();
-    console.log(selectedCategory);
-  }
 
   return ( 
     <>
-      <form onSubmit={onSubmit}>
+      <form>
         <fieldset>
           <legend>Select Purchase Category</legend>
           <div className="form-type">
-            <label>Card Image: </label>
             <select
               value={selectedCategory}
               onChange={changeCategory}
             >
               <option value=''></option>
               <option value='Gas'>Gas</option>
-              <option value='Restaurant'>Restaurant</option>
+              <option value='Dining'>Dining</option>
               <option value='Travel'>Travel</option>
               <option value='Grocery_Stores'>Grocery_Stores</option>
               <option value='Wholesale_Clubs'>Wholesale_Clubs</option>
@@ -48,9 +42,6 @@ const Suggest = () => {
             </select>
           </div>
         </fieldset>
-        <div className="center">
-          <button className="submit" type="submit">Rank Cards</button>
-        </div>
       </form>
       <Result selectedCategory={selectedCategory}/>
     </>
