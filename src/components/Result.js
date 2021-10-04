@@ -8,22 +8,24 @@ import amex from './../img/amex.png'
 import discover from './../img/discover.png'
 
 const Result = ({selectedCategory}) => {
-  let {cards} = useFirestore('cards');
-  console.log(cards);
-  const newCards = cards.sort(
-    function (a, b) {
-    return a.categories - b.categories.Paypal;
-  }
-  );
-  console.log(cards);
+  const {cards} = useFirestore('cards');
+  cards.sort(function(a, b) {
+    const itemA = a.categories[selectedCategory] ? a.categories[selectedCategory]: 0;
+    const itemB = b.categories[selectedCategory] ? b.categories[selectedCategory]: 0;
+    console.log(itemA);
+    if (itemA > itemB) {
+      return -1;
+    }
+    if (itemA < itemB) {
+      return 1;
+    }
+    return 0;
+  });
 
   return (  
     <div className="card-list">
-      {selectedCategory && <h1>What's In Your Wallet:</h1>}
-      <Grid fluid>
-        <Row>
-          {cards.map((card) => (
-            <Col sm={12} md={6} lg={4}>
+      {selectedCategory && <h1>Ranked Cards:</h1>}
+          {selectedCategory && cards.map((card) => (
               <div className="card-preview" key={card.id}>
                 <Link to={`/cards/${card.id}`}>
                   <div className="card-template-list">
@@ -46,10 +48,7 @@ const Result = ({selectedCategory}) => {
                   </div>
                 </Link>
               </div>
-            </Col>
           ))}
-        </Row>
-      </Grid>
     </div>
   );
 }
