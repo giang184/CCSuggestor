@@ -19,7 +19,7 @@ const AddCardTemplates = () => {
       type: 'visa', 
       categories: {
         Drug_Stores: 3,
-        Restaurant:3,
+        Dining:3,
         All_Other_Purchases: 1.5
       },
       img: unlimited,

@@ -21,7 +21,7 @@ const AddCardDynamic = () => {
   
   const categories = [
     'Gas',
-    'Restaurant',
+    'Dining',
     'Travel',
     'Grocery_Stores',
     'Wholesale_Clubs',
