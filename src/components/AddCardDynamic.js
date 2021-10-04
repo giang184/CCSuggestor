@@ -135,7 +135,7 @@ const AddCardDynamic = () => {
       ...formState,
       categories: {
         ...formState.categories,
-        [category]: value,
+        [category]: parseInt(value),
       },
     })
   }
