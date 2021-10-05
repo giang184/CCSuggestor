@@ -10,6 +10,7 @@ import Login from './components/Login';
 import {Container} from 'react-bootstrap'
 import {AuthProvider} from '../src/contexts/AuthContext'
 import Profile from './components/Profile';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
                 <div className="w-100" style={{maxWidth: '400px'}}>
                   <Route exact path='/signup' component={Signup} />
                   <Route exact path='/login' component={Login} />
-                  <Route exact path='/profile' component={Profile} />
+                  <PrivateRoute exact path='/profile' component={Profile} />
                 </div>
               </Container>
             </AuthProvider>
