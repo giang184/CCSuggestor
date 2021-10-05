@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import CardDetails from './components/CardDetails';
 import NotFound from './components/NotFound';
 import Signup from './components/Signup';
+import Login from './components/Login';
 import {Container} from 'react-bootstrap'
 import {AuthProvider} from '../src/contexts/AuthContext'
 
@@ -19,18 +20,17 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/signup">
-              <AuthProvider>
-                <Container 
-                  className="d-flex align-items-center justify-content-center"
-                  style={{minHeight: "100vh"}} 
-                >
-                  <div className="w-100" style={{maxWidth: '400px'}}>
-                    <Signup />
-                  </div>
-                  </Container>
-                  </AuthProvider>
-            </Route>
+            <AuthProvider>
+              <Container 
+                className="d-flex align-items-center justify-content-center"
+                style={{minHeight: "100vh"}} 
+              >
+                <div className="w-100" style={{maxWidth: '400px'}}>
+                  <Route exact path='/signup' component={Signup} />
+                  <Route exact path='/login' component={Login} />
+                </div>
+              </Container>
+            </AuthProvider>
             <Route path="/suggest">
               <Suggest />
             </Route>
