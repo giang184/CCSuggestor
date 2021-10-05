@@ -19,10 +19,8 @@ function App() {
         <Navbar />
         <div className="content">
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
             <AuthProvider>
+            <PrivateRoute exact path="/" component={Home}/>
               <Container 
                 className="d-flex align-items-center justify-content-center"
                 style={{minHeight: "100vh"}} 
@@ -33,19 +31,13 @@ function App() {
                   <PrivateRoute exact path='/profile' component={Profile} />
                 </div>
               </Container>
-            </AuthProvider>
-            <Route path="/suggest">
-              <Suggest />
-            </Route>
-            <Route path="/create">
-              <AddCard />
-            </Route>
-            <Route path="/cards/:id">
-              <CardDetails />
-            </Route>
+            <PrivateRoute exact path="/suggest" component={Suggest}/>
+            <PrivateRoute exact path="/create" component={AddCard}/>
+            <PrivateRoute exact path="/cards/:id" component={AddCard}/>
             <Route path="*">
               <NotFound />
             </Route>
+            </AuthProvider>
           </Switch>
         </div>
       </div>
