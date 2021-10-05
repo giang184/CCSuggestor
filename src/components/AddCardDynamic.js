@@ -15,6 +15,8 @@ import discoverit from './../img/discover-it.jfif'
 import savor from './../img/capital-one-savor.png'
 import wellsFargo from './../img/wells-fargo-active.png'
 import citi from './../img/citi-double-cash.jpg'
+import boa from './../img/boa.png'
+
 
 const AddCardDynamic = () => {
   const history = useHistory();
@@ -99,6 +101,8 @@ const AddCardDynamic = () => {
         return wellsFargo;
       case "citi":
         return citi;
+      case "boa":
+        return boa;
       default:
         return visa;
     }
@@ -195,6 +199,7 @@ const AddCardDynamic = () => {
                       <option value="savor">Capital One Savor</option>
                       <option value="wellsFargo">Wells Fargo Active Cash</option>
                       <option value="citi">Citi Double Cash</option>
+                      <option value="boa">Bank of America Cash Rewards</option>
                       <option value="amexPreferred">American Express Blue Preferred</option>
                       <option value="amexEveryday">American Express Blue Blue Everyday</option>
                     </select>
