@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { projectFirestore } from '../firebase/config';
 import {useHistory} from 'react-router-dom';
 import { Grid, Row, Col } from "react-flexbox-grid";
+import {Card} from 'react-bootstrap'
 import visa from './../img/visa.png'
 import mastercard from './../img/mastercard.png'
 import amex from './../img/amex.png'
@@ -161,88 +162,93 @@ const AddCardDynamic = () => {
           <Grid>
             <Row>
               <Col sm={12} md={6} lg={4}>
-                <fieldset  className="border p-4">
-                  <legend className="w-auto text-left">Required Fields</legend>
-                  <div className="form-name">
-                    <label>Credit Card Name: </label>
-                    <input 
-                      type="text"
-                      required
-                      value={formState.name}
-                      onChange={addName}
-                    />
-                  </div>
-                  <div className="form-type">
-                    <label>Card Type: </label>
-                    <select
-                      value={formState.type}
-                      onChange={addType}
-                    >
-                      <option value="visa">Visa</option>
-                      <option value="mastercard">Mastercard</option>
-                      <option value="discover">Discover</option>
-                      <option value="amex">American Express</option>
-                    </select>
-                  </div>
-                  <div className="form-type">
-                    <label>Card Image: </label>
-                    <select
-                      value={formState.image}
-                      onChange={addImage}
-                    >
-                      <option value="visa-generic">Visa - Generic</option>
-                      <option value="mastercard-generic">Mastercard - Generic</option>
-                      <option value="discover-generic">Discover - Generic</option>
-                      <option value="amex-generic">American Express - Generic</option>
-                      <option value="unlimited">Chase Freedom Unlimited</option>
-                      <option value="flex">Chase Freedom Flex</option>
-                      <option value="sapphire">Chase Freedom Sapphire</option>
-                      <option value="discoverit">Discover it</option>
-                      <option value="savor">Capital One Savor</option>
-                      <option value="wellsFargo">Wells Fargo Active Cash</option>
-                      <option value="citi">Citi Double Cash</option>
-                      <option value="citi-custom">Citi Custom Cash</option>
-                      <option value="boa">Bank of America Cash Rewards</option>
-                      <option value="amexPreferred">American Express Blue Preferred</option>
-                      <option value="amexEveryday">American Express Blue Blue Everyday</option>
-                    </select>
-                  </div>
-                </fieldset>
+                <Card>
+                  <Card.Header style={{textAlign: "center", fontSize:"23px", fontWeight:"500"}}>Required Fields</Card.Header>
+                  <Card.Body>
+                    <div className="form-name">
+                      <label>Credit Card Name: </label>
+                      <input 
+                        type="text"
+                        required
+                        value={formState.name}
+                        onChange={addName}
+                      />
+                    </div>
+                    <div className="form-type">
+                      <label>Card Type: </label>
+                      <select
+                        value={formState.type}
+                        onChange={addType}
+                      >
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="discover">Discover</option>
+                        <option value="amex">American Express</option>
+                      </select>
+                    </div>
+                    <div className="form-type">
+                      <label>Card Image: </label>
+                      <select
+                        value={formState.image}
+                        onChange={addImage}
+                      >
+                        <option value="visa-generic">Visa - Generic</option>
+                        <option value="mastercard-generic">Mastercard - Generic</option>
+                        <option value="discover-generic">Discover - Generic</option>
+                        <option value="amex-generic">American Express - Generic</option>
+                        <option value="unlimited">Chase Freedom Unlimited</option>
+                        <option value="flex">Chase Freedom Flex</option>
+                        <option value="sapphire">Chase Freedom Sapphire</option>
+                        <option value="discoverit">Discover it</option>
+                        <option value="savor">Capital One Savor</option>
+                        <option value="wellsFargo">Wells Fargo Active Cash</option>
+                        <option value="citi">Citi Double Cash</option>
+                        <option value="citi-custom">Citi Custom Cash</option>
+                        <option value="boa">Bank of America Cash Rewards</option>
+                        <option value="amexPreferred">American Express Blue Preferred</option>
+                        <option value="amexEveryday">American Express Blue Blue Everyday</option>
+                      </select>
+                    </div>
+                    </Card.Body>
+                  </Card>
               </Col>
               <Col sm={12} md={6} lg={4}>
-                <fieldset  className="border p-2">
-                  <legend>Add Cash Back Category</legend>
-                  <select 
-                    value={selectedCategory}
-                    onChange={(event) => setSelectedCategory(parseInt(event.target.value))}
-                  >
-                    {categories.map((category, i) => (
-                      <option key={category} value={i}>{category}</option>
-                    ))}
-                  </select>
-                  <button onClick={addCategory}>Add</button>
-                </fieldset>
+                <Card>
+                  <Card.Header style={{textAlign: "center", fontSize:"23px", fontWeight:"500"}}>Add Rewards Category</Card.Header>
+                  <Card.Body>
+                    <select 
+                      value={selectedCategory}
+                      onChange={(event) => setSelectedCategory(parseInt(event.target.value))}
+                    >
+                      {categories.map((category, i) => (
+                        <option key={category} value={i}>{category}</option>
+                      ))}
+                    </select>
+                    <button onClick={addCategory}>Add</button>
+                    </Card.Body>
+                </Card>
               </Col>
               <Col sm={12} md={6} lg={4}>
                 {Object.keys(formState.categories).length >0 &&
-                  <fieldset  className="border p-2">
-                    <legend>Set Category's Cash Back Percentage</legend>
-                    {Object.keys(formState.categories).map((category, index) => (
-                      <div key={category}>
-                      <fieldset>
-                        <legend>category #{index+1}</legend>
-                        <label>{category}</label>
-                        <input 
-                          type="number"
-                          value={formState.categories[category]} 
-                          onChange={(event) => updateValueForCategory(category, event.target.value)}
-                        />
-
-                        <button onClick={(event) => removeCategory(event, category)}>Remove Category</button>
-                      </fieldset>
-                      </div>
-                    ))}
-                  </fieldset>
+                  <Card>
+                    <Card.Header style={{textAlign: "center", fontSize:"23px", fontWeight:"500"}}>Set Rewards Percentage</Card.Header>
+                    <Card.Body>
+                      {Object.keys(formState.categories).map((category, index) => (
+                        <div key={category}>
+                        <fieldset>
+                          <legend style={{fontSize: "18px"}}>{category}</legend>
+                          <input 
+                            type="number"
+                            value={formState.categories[category]} 
+                            onChange={(event) => updateValueForCategory(category, event.target.value)}
+                          />
+                          <button onClick={(event) => removeCategory(event, category)}>Remove Category</button>
+                        </fieldset>
+                        <br/><br/>
+                        </div>
+                      ))}
+                    </Card.Body>
+                  </Card>
                 }
               </Col>
             </Row>
