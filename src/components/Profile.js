@@ -38,9 +38,6 @@ export default function Profile() {
           </Card.Body>
         </Card>
       }
-      {!currentUser &&
-        <h2>Error signing up. Try again.</h2>
-      }
       </>
       
   )

@@ -15,7 +15,7 @@ const Home = () => {
 
   return (  
     <div className="card-list">
-      {filterCards.length > 0 && <h1>What's In Your Wallet:</h1>}
+      <h1>What's In Your Wallet:</h1>
       <Grid fluid>
         <Row>
           {filterCards.map((card) => (

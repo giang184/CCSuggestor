@@ -24,9 +24,15 @@ export default function Signup() {
       setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
       setLoading(false)
-      history.push("/profile")
+      if(passwordRef.current.value.length >= 6) {
+        history.push("/profile")
+      }
+      else {
+        setError("Password needs to contain 6 or more characters")
+      }
     } catch {
       setError("Failed to create an account")
+      
     }
   }
 
@@ -42,7 +48,7 @@ export default function Signup() {
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password (at least 6 characters needed)</Form.Label>
+              <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
             <Form.Group id="password-confirm">
