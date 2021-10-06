@@ -17,9 +17,11 @@ const Suggest = () => {
     <h1>Rank Card By Purchase Category:</h1>
     <Grid>
       <Row>
+      <Col sm={6} md={3} lg={2}>
+      </Col>
         <Col sm={12} md={6} lg={4}>
           <Card style={{ width: '14rem'}}>
-            <Card.Header style={{textAlign: "center", fontSize:"23px", fontWeight:"500"}}>Select Category</Card.Header>
+            <Card.Header style={{textAlign: "center", fontSize:"20px", fontWeight:"500"}}>Select Category</Card.Header>
             <Card.Body>
               <form>
                 <div className="form-type">

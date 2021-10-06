@@ -24,7 +24,7 @@ const Result = ({selectedCategory}) => {
 
   return (  
     <div className="card-list">
-      {selectedCategory && <h1>Ranked Cards:</h1>}
+      {/* {selectedCategory && <h1>Ranked Cards:</h1>} */}
           {selectedCategory && cards.map((card) => (
               <div className="card-preview" key={card.id}>
                 <Link to={`/cards/${card.id}`}>

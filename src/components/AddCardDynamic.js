@@ -163,7 +163,7 @@ const AddCardDynamic = () => {
             <Row>
               <Col sm={12} md={6} lg={4}>
                 <Card>
-                  <Card.Header style={{textAlign: "center", fontSize:"23px", fontWeight:"500"}}>Required Fields</Card.Header>
+                  <Card.Header style={{textAlign: "center", fontSize:"22px", fontWeight:"500"}}>Required Fields</Card.Header>
                   <Card.Body>
                     <div className="form-name">
                       <label>Credit Card Name: </label>
@@ -214,7 +214,7 @@ const AddCardDynamic = () => {
               </Col>
               <Col sm={12} md={6} lg={4}>
                 <Card>
-                  <Card.Header style={{textAlign: "center", fontSize:"23px", fontWeight:"500"}}>Add Rewards Category</Card.Header>
+                  <Card.Header style={{textAlign: "center", fontSize:"22px", fontWeight:"500"}}>Add Rewards Category</Card.Header>
                   <Card.Body>
                     <select 
                       value={selectedCategory}
@@ -231,7 +231,7 @@ const AddCardDynamic = () => {
               <Col sm={12} md={6} lg={4}>
                 {Object.keys(formState.categories).length >0 &&
                   <Card>
-                    <Card.Header style={{textAlign: "center", fontSize:"23px", fontWeight:"500"}}>Set Rewards Percentage</Card.Header>
+                    <Card.Header style={{textAlign: "center", fontSize:"22px", fontWeight:"500"}}>Set Rewards Percentage</Card.Header>
                     <Card.Body>
                       {Object.keys(formState.categories).map((category, index) => (
                         <div key={category}>
