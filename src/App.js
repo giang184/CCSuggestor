@@ -2,6 +2,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './components/Home';
 import Suggest from './components/Suggest';
 import AddCard from './components/AddCard';
+import CardDetails from './components/CardDetails'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NotFound from './components/NotFound';
 import Signup from './components/Signup';
@@ -25,7 +26,7 @@ function App() {
               <PrivateRoute exact path="/" component={Home}/>
               <PrivateRoute exact path="/suggest" component={Suggest}/>
               <PrivateRoute exact path="/create" component={AddCard}/>
-              <PrivateRoute exact path="/cards/:id" component={AddCard}/>
+              <PrivateRoute exact path="/cards/:id" component={CardDetails}/>
                 <Container 
                   className="d-flex justify-content-center"
                   style={{minHeight: "100vh"}} 

@@ -11,22 +11,30 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   border-bottom: 1px solid #e2dada;
+  box-shadow: 1px 3px 5px #0000001a;
+  background-color: rgb(46, 46, 51);
 }
 .navbar .brand-logo {
   color: #f1356d;
+  font-weight: 600;
+  background-color: rgb(46, 46, 51);
 }
 .navbar .links {
   margin-left: auto;
+  background-color: rgb(46, 46, 51);
+
 }
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
-  color: rgb(111, 110, 200);
+  color: rgb(109, 48, 221);
   font-weight: 500;
+  background-color: rgb(46, 46, 51);
+  color:white;
 }
 .navbar a:hover {
   color: #f1356d;
@@ -41,10 +49,10 @@
 .card-preview {
   padding: 10px 16px;
   margin: 5px 0;
-  width: 275px;
+  width: 300px;
 }
 .card-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  box-shadow: 5px 7px 9px rgba(0,0,0,0.1);
   cursor: pointer;
 }
 h2 {

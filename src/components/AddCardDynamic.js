@@ -161,8 +161,8 @@ const AddCardDynamic = () => {
           <Grid>
             <Row>
               <Col sm={12} md={6} lg={4}>
-                <fieldset>
-                  <legend>Required Fields</legend>
+                <fieldset  className="border p-4">
+                  <legend className="w-auto text-left">Required Fields</legend>
                   <div className="form-name">
                     <label>Credit Card Name: </label>
                     <input 
@@ -210,7 +210,7 @@ const AddCardDynamic = () => {
                 </fieldset>
               </Col>
               <Col sm={12} md={6} lg={4}>
-                <fieldset>
+                <fieldset  className="border p-2">
                   <legend>Add Cash Back Category</legend>
                   <select 
                     value={selectedCategory}
@@ -225,7 +225,7 @@ const AddCardDynamic = () => {
               </Col>
               <Col sm={12} md={6} lg={4}>
                 {Object.keys(formState.categories).length >0 &&
-                  <fieldset>
+                  <fieldset  className="border p-2">
                     <legend>Set Category's Cash Back Percentage</legend>
                     {Object.keys(formState.categories).map((category, index) => (
                       <div key={category}>
