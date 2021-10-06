@@ -1,6 +1,6 @@
-import React, {useRef, useState} from 'react'
-import { Form, Button, Card, Alert} from 'react-bootstrap'
-import {useAuth} from '../contexts/AuthContext'
+import React, { useRef, useState } from "react"
+import { Form, Button, Card, Alert } from "react-bootstrap"
+import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 
 export default function Signup() {
@@ -23,12 +23,11 @@ export default function Signup() {
       setError("")
       setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
-      history.push('/profile')
+      setLoading(false)
+      history.push("/profile")
     } catch {
       setError("Failed to create an account")
     }
-
-    setLoading(false)
   }
 
   return (
@@ -43,7 +42,7 @@ export default function Signup() {
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password (at least 6 characters needed)</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
             <Form.Group id="password-confirm">

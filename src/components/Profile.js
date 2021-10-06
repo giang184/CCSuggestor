@@ -19,7 +19,6 @@ export default function Profile() {
     }
   }
 
-
   return (
     <>
       <Card>
