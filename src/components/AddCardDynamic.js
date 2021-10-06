@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { projectFirestore } from '../firebase/config';
 import {useHistory} from 'react-router-dom';
+import { useAuth } from "../contexts/AuthContext"
 import { Grid, Row, Col } from "react-flexbox-grid";
 import {Card} from 'react-bootstrap'
 import visa from './../img/visa.png'
@@ -21,6 +22,7 @@ import boa from './../img/boa.png'
 
 const AddCardDynamic = () => {
   const history = useHistory();
+  const { currentUser } = useAuth()
   
   const categories = [
     'Gas',
@@ -45,6 +47,7 @@ const AddCardDynamic = () => {
   ]
 
   const [formState, setFormState] = useState({
+    user: '',
     name: '',
     type: 'visa',
     img: visa,
@@ -58,6 +61,7 @@ const AddCardDynamic = () => {
     setFormState({
       ...formState,
       name: event.target.value,
+      user: currentUser.email
     })
   }
 
