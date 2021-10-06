@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Result from './Result';
+import {Card, Button} from 'react-bootstrap'
 
 const Suggest = () => {
   const [selectedCategory, setSelectedCategory] = useState('')
@@ -11,9 +12,11 @@ const Suggest = () => {
 
   return ( 
     <>
-      <form>
-        <fieldset>
-          <legend>Select Purchase Category</legend>
+    <div className="test">
+    <Card bg={'light'} style={{ width: '15rem'}}>
+      <Card.Header>Select Purchase Category</Card.Header>
+      <Card.Body>
+        <form>
           <div className="form-type">
             <select
               value={selectedCategory}
@@ -41,9 +44,11 @@ const Suggest = () => {
               <option value='All_Other_Purchases'>All_Other_Purchases</option>
             </select>
           </div>
-        </fieldset>
-      </form>
-      <Result selectedCategory={selectedCategory}/>
+        </form>
+      </Card.Body>
+    </Card>
+    <Result selectedCategory={selectedCategory}/>
+    </div>
     </>
   );
 }

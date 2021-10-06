@@ -9,7 +9,7 @@ const Navbar = () => {
   const links = currentUser? <SignedInLinks /> : <SignedOutLinks />
   return ( 
     <nav className="navbar">
-      <h3 className="brand-logo">CreditCardSuggestor</h3>
+      <h3 className="brand-logo">CCSuggestor</h3>
       <Link to='/'>Wallet</Link>
       <Link to='/suggest'>Suggest</Link>
       <Link to='/create'>Add New Card</Link>
