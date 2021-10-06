@@ -13,7 +13,6 @@ import Profile from './components/Profile';
 import PrivateRoute from './components/PrivateRoute';
 import ForgotPassword from './components/ForgotPassword';
 import UpdateProfile from './components/UpdateProfile';
-import RequiredLogin from './components/RequireLogin';
 
 function App() {
   return (
@@ -37,7 +36,6 @@ function App() {
                     <Route path='/profile' component={Profile} />
                     <PrivateRoute path='/update-profile' component={UpdateProfile} />
                     <Route path='/forgot-password' component={ForgotPassword} />
-                    <Route path='/login-required' component={RequiredLogin} />
                   </div>
                 </Container>
               <Route path="*">
