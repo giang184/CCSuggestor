@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFirestore from '../hooks/useFirestore';
+import { useAuth } from "../contexts/AuthContext";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import visa from './../img/visa.png'
 import mastercard from './../img/mastercard.png'
@@ -8,13 +9,16 @@ import amex from './../img/amex.png'
 import discover from './../img/discover.png'
 
 const Home = () => {
-  const {cards} = useFirestore('cards');
+  const { currentUser } = useAuth()
+  const {cards} = useFirestore('cards')
+  const filterCards=cards.filter(card => card.user === currentUser.email)
+
   return (  
     <div className="card-list">
-      {cards.length > 0 && <h1>What's In Your Wallet:</h1>}
+      {filterCards.length > 0 && <h1>What's In Your Wallet:</h1>}
       <Grid fluid>
         <Row>
-          {cards.map((card) => (
+          {filterCards.map((card) => (
             <Col sm={12} md={6} lg={4}>
               <div className="card-preview" key={card.id}>
                 <Link to={`/cards/${card.id}`}>

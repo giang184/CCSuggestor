@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFirestore from '../hooks/useFirestore';
+import { useAuth } from "../contexts/AuthContext";
 import visa from './../img/visa.png'
 import mastercard from './../img/mastercard.png'
 import amex from './../img/amex.png'
 import discover from './../img/discover.png'
 
 const Result = ({selectedCategory}) => {
-  const {cards} = useFirestore('cards');
-  console.log(cards);
-  cards.sort(function(a, b) {
+  const { currentUser } = useAuth()
+  const {cards} = useFirestore('cards')
+  const filterCards=cards.filter(card => card.user === currentUser.email)
+  
+  filterCards.sort(function(a, b) {
     const itemA = Math.max(a.categories.All_Other_Purchases ? a.categories.All_Other_Purchases: 0, a.categories[selectedCategory] ? a.categories[selectedCategory]: 0);
     const itemB = Math.max(b.categories.All_Other_Purchases ? b.categories.All_Other_Purchases: 0, b.categories[selectedCategory] ? b.categories[selectedCategory]: 0);
     console.log(itemA);
@@ -24,8 +27,7 @@ const Result = ({selectedCategory}) => {
 
   return (  
     <div className="card-list">
-      {/* {selectedCategory && <h1>Ranked Cards:</h1>} */}
-          {selectedCategory && cards.map((card) => (
+          {selectedCategory && filterCards.map((card) => (
               <div className="card-preview" key={card.id}>
                 <Link to={`/cards/${card.id}`}>
                   <div className="card-template-list">
