@@ -7,6 +7,7 @@ export default function Profile() {
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
   const history = useHistory()
+  console.log('profile', currentUser)
 
   async function handleLogout() {
     setError("")

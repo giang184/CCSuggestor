@@ -18,7 +18,6 @@ import citi from './../img/citi-double-cash.jpg'
 import citiCustom from './../img/citi-custom-cash.png'
 import boa from './../img/boa.png'
 
-
 const AddCardDynamic = () => {
   const history = useHistory();
   

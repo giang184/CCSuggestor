@@ -15,7 +15,7 @@
   margin: 0 auto;
   border-bottom: 1px solid #e2dada;
 }
-.navbar h1 {
+.navbar .brand-logo {
   color: #f1356d;
 }
 .navbar .links {

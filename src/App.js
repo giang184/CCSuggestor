@@ -1,4 +1,4 @@
-import Navbar from './components/Navbar';
+import Navbar from './components/layout/Navbar';
 import Home from './components/Home';
 import Suggest from './components/Suggest';
 import AddCard from './components/AddCard';
@@ -17,10 +17,10 @@ import RequiredLogin from './components/RequireLogin';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <div className="content">
-          <AuthProvider>
+      <AuthProvider>
+        <div className="App">
+          <Navbar />
+          <div className="content">
             <Switch>
               <PrivateRoute exact path="/" component={Home}/>
               <PrivateRoute exact path="/suggest" component={Suggest}/>
@@ -42,10 +42,10 @@ function App() {
               <Route path="*">
                 <NotFound />
               </Route>
-          </Switch>
-        </AuthProvider>
+            </Switch>
+          </div>
         </div>
-      </div>
+      </AuthProvider>
     </Router>
   );
 }
