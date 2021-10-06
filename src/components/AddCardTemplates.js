@@ -1,5 +1,6 @@
 import { projectFirestore } from '../firebase/config';
 import {useHistory} from 'react-router-dom';
+import { useAuth } from "../contexts/AuthContext"
 import { Grid, Row, Col } from "react-flexbox-grid";
 import unlimited from './../img/chase-freedom-unlimited.png'
 import flex from './../img/chase-freedom-flex.png'
@@ -13,9 +14,11 @@ import citi from './../img/citi-double-cash.jpg'
 
 const AddCardTemplates = () => {
   const history = useHistory();
+  const { currentUser } = useAuth()
   const dir = [
     {
       name: 'Chase Freedom Unlimited', 
+      user: currentUser.email,
       type: 'visa', 
       categories: {
         Drug_Stores: 3,
@@ -25,7 +28,8 @@ const AddCardTemplates = () => {
       img: unlimited,
     },
     {
-      name: 'Chase Freedom Flex', 
+      name: 'Chase Freedom Flex',
+      user: currentUser.email,
       type: 'mastercard', 
       categories: {
         Paypal: 5,
@@ -37,7 +41,8 @@ const AddCardTemplates = () => {
       img: flex,
     },
     {
-      name: 'Chase Sapphire Reserve', 
+      name: 'Chase Sapphire Reserve',
+      user: currentUser.email,
       type: 'visa', 
       categories: {
         Dining: 3,
@@ -49,7 +54,8 @@ const AddCardTemplates = () => {
       img: sapphire,
     },
     {
-      name: 'Discover it', 
+      name: 'Discover it',
+      user: currentUser.email,
       type: 'discover', 
       categories: {
         Amazon: 5,
@@ -60,7 +66,8 @@ const AddCardTemplates = () => {
       img: discoverit,
     },
     {
-      name: 'Capital One Savor', 
+      name: 'Capital One Savor',
+      user: currentUser.email,
       type: 'mastercard', 
       categories: {
         Entertainment: 3,
@@ -72,7 +79,8 @@ const AddCardTemplates = () => {
       img: savor,
     },  
     {
-      name: 'Wells Fargo Active Cash', 
+      name: 'Wells Fargo Active Cash',
+      user: currentUser.email,
       type: 'visa', 
       categories: {
         All_Other_Purchases: 2,
@@ -80,7 +88,8 @@ const AddCardTemplates = () => {
       img: wellsFargo,
     },  
     {
-      name: 'Citi Double Cash', 
+      name: 'Citi Double Cash',
+      user: currentUser.email,
       type: 'mastercard', 
       categories: {
         All_Other_Purchases: 2,
@@ -88,7 +97,8 @@ const AddCardTemplates = () => {
       img: citi,
     },  
     {
-      name: 'Amex Blue Preferred', 
+      name: 'Amex Blue Preferred',
+      user: currentUser.email,
       type: 'amex', 
       categories: {
         Grocery_Stores: 6,
@@ -100,7 +110,8 @@ const AddCardTemplates = () => {
       img: amexPreferred,
     },
     {
-      name: 'Amex Blue Everyday', 
+      name: 'Amex Blue Everyday',
+      user: currentUser.email,
       type: 'amex', 
       categories: {
         Grocery_Stores: 3,
