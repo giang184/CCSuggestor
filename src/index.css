@@ -59,15 +59,18 @@ h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 8px;
+  font-weight:600;
 }
 
 .card-preview a{
   text-decoration: none;
+  font-weight:600;
 }
 
 h1 {
   font-size: 25px;
   margin-bottom: 30px;
+  font-weight:600;
 }
 .card-details h4 {
   margin-bottom: 10px;

@@ -13,6 +13,7 @@ const Suggest = () => {
   return ( 
     <>
     <div className="test">
+    <h1>Rank Card By Purchase Category:</h1>
     <Card bg={'light'} style={{ width: '15rem'}}>
       <Card.Header>Select Purchase Category</Card.Header>
       <Card.Body>
