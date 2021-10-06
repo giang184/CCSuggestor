@@ -11,6 +11,7 @@ import {Container} from 'react-bootstrap'
 import {AuthProvider} from '../src/contexts/AuthContext'
 import Profile from './components/Profile';
 import PrivateRoute from './components/PrivateRoute';
+import ForgotPassword from './components/ForgotPassword';
 
 function App() {
   return (
@@ -20,23 +21,24 @@ function App() {
         <div className="content">
           <Switch>
             <AuthProvider>
-            <PrivateRoute exact path="/" component={Home}/>
-              <Container 
-                className="d-flex align-items-center justify-content-center"
-                style={{minHeight: "100vh"}} 
-              >
-                <div className="w-100" style={{maxWidth: '400px'}}>
-                  <Route exact path='/signup' component={Signup} />
-                  <Route exact path='/login' component={Login} />
-                  <PrivateRoute exact path='/profile' component={Profile} />
-                </div>
-              </Container>
-            <PrivateRoute exact path="/suggest" component={Suggest}/>
-            <PrivateRoute exact path="/create" component={AddCard}/>
-            <PrivateRoute exact path="/cards/:id" component={AddCard}/>
-            <Route path="*">
-              <NotFound />
-            </Route>
+              <PrivateRoute exact path="/" component={Home}/>
+                <Container 
+                  className="d-flex align-items-center justify-content-center"
+                  style={{minHeight: "100vh"}} 
+                >
+                  <div className="w-100" style={{maxWidth: '400px'}}>
+                    <Route exact path='/signup' component={Signup} />
+                    <Route exact path='/login' component={Login} />
+                    <PrivateRoute exact path='/profile' component={Profile} />
+                    <Route path='/forgot-password' component={ForgotPassword} />
+                  </div>
+                </Container>
+              <PrivateRoute exact path="/suggest" component={Suggest}/>
+              <PrivateRoute exact path="/create" component={AddCard}/>
+              <PrivateRoute exact path="/cards/:id" component={AddCard}/>
+              <Route path="*">
+                <NotFound />
+              </Route>
             </AuthProvider>
           </Switch>
         </div>
