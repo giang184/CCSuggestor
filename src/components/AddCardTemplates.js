@@ -19,7 +19,6 @@ const AddCardTemplates = () => {
     {
       name: 'Chase Freedom Unlimited', 
       user: currentUser.email,
-      type: 'visa', 
       categories: {
         Drug_Stores: 3,
         Dining:3,
@@ -30,7 +29,6 @@ const AddCardTemplates = () => {
     {
       name: 'Chase Freedom Flex',
       user: currentUser.email,
-      type: 'mastercard', 
       categories: {
         Paypal: 5,
         Walmart: 5,
@@ -43,7 +41,6 @@ const AddCardTemplates = () => {
     {
       name: 'Chase Sapphire Reserve',
       user: currentUser.email,
-      type: 'visa', 
       categories: {
         Dining: 3,
         Grocery_Stores: 3,
@@ -56,7 +53,6 @@ const AddCardTemplates = () => {
     {
       name: 'Discover it',
       user: currentUser.email,
-      type: 'discover', 
       categories: {
         Amazon: 5,
         Walmart: 5,
@@ -68,7 +64,6 @@ const AddCardTemplates = () => {
     {
       name: 'Capital One Savor',
       user: currentUser.email,
-      type: 'mastercard', 
       categories: {
         Entertainment: 3,
         Dining: 3,
@@ -81,7 +76,6 @@ const AddCardTemplates = () => {
     {
       name: 'Wells Fargo Active Cash',
       user: currentUser.email,
-      type: 'visa', 
       categories: {
         All_Other_Purchases: 2,
       },
@@ -90,7 +84,6 @@ const AddCardTemplates = () => {
     {
       name: 'Citi Double Cash',
       user: currentUser.email,
-      type: 'mastercard', 
       categories: {
         All_Other_Purchases: 2,
       },
@@ -99,7 +92,6 @@ const AddCardTemplates = () => {
     {
       name: 'Amex Blue Preferred',
       user: currentUser.email,
-      type: 'amex', 
       categories: {
         Grocery_Stores: 6,
         Streaming_Services: 6,
@@ -111,8 +103,7 @@ const AddCardTemplates = () => {
     },
     {
       name: 'Amex Blue Everyday',
-      user: currentUser.email,
-      type: 'amex', 
+      user: currentUser.email, 
       categories: {
         Grocery_Stores: 3,
         Department_Stores: 2,
