@@ -4,7 +4,7 @@
 * {
   margin: 0;
   font-family: "Quicksand";
-  color: #333;
+  /* color: #333; */
   background-color: rgb(241, 249, 250);
 }
 .navbar {
@@ -16,28 +16,33 @@
   box-shadow: 1px 3px 5px #0000001a;
   background-color: rgb(46, 46, 51);
 }
-.navbar .brand-logo {
-  color: #f1356d;
-  font-weight: 600;
-  background-color: rgb(46, 46, 51);
-}
-.navbar .links {
-  margin-left: auto;
-  background-color: rgb(46, 46, 51);
 
+.navbar .brand-logo {
+  font-size: 25px;
+  color: #f1356d;
+  font-weight: 700;
+  background-color: rgb(46, 46, 51);
 }
+.navbar .brand-logo:hover {
+  color: #f1356d !important;
+}
+
 .navbar a {
-  margin-left: 16px;
   text-decoration: none;
   padding: 6px;
-  color: rgb(109, 48, 221);
   font-weight: 500;
   background-color: rgb(46, 46, 51);
-  color:white;
+  color: white !important;
 }
+
 .navbar a:hover {
-  color: #f1356d;
+  color: #f1356d !important;
 }
+
+#responsive-navbar-nav {
+  background-color: rgb(46, 46, 51);
+}
+
 .content {
   max-width: 1000px;
   margin: 40px auto;
