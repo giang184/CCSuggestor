@@ -4,7 +4,7 @@
 * {
   margin: 0;
   font-family: "Quicksand";
-  /* color: #333; */
+  color: rgb(3, 3, 3);
   background-color: rgb(241, 249, 250);
 }
 .navbar {
@@ -68,7 +68,7 @@ h2 {
 
 .card-preview a{
   text-decoration: none;
-  font-weight:600;
+  font-weight:500;
 }
 
 h1 {
