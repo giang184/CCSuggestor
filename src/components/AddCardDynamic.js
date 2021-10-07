@@ -49,7 +49,6 @@ const AddCardDynamic = () => {
   const [formState, setFormState] = useState({
     user: '',
     name: '',
-    type: 'visa',
     img: visa,
     categories: {
     }
@@ -62,13 +61,6 @@ const AddCardDynamic = () => {
       ...formState,
       name: event.target.value,
       user: currentUser.email
-    })
-  }
-
-  const addType = (event) => {
-    setFormState({
-      ...formState,
-      type: event.target.value,
     })
   }
 
@@ -177,18 +169,6 @@ const AddCardDynamic = () => {
                         value={formState.name}
                         onChange={addName}
                       />
-                    </div>
-                    <div className="form-type">
-                      <label>Card Type: </label>
-                      <select
-                        value={formState.type}
-                        onChange={addType}
-                      >
-                        <option value="visa">Visa</option>
-                        <option value="mastercard">Mastercard</option>
-                        <option value="discover">Discover</option>
-                        <option value="amex">American Express</option>
-                      </select>
                     </div>
                     <div className="form-type">
                       <label>Card Image: </label>
