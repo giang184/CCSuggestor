@@ -1,22 +1,10 @@
-import {Link} from 'react-router-dom';
-import { useAuth } from "../../contexts/AuthContext";
-import SignedInLinks from './SignedInLinks';
-import SignedOutLinks from './SignedOutLinks';
-import {Navbar, Nav, Container} from 'react-bootstrap'
+import { useAuth } from "../contexts/AuthContext";
+import {Navbar, Nav} from 'react-bootstrap'
 
 const MyNavBar = () => {
   const {currentUser, logout} = useAuth()
   console.log('nav',currentUser)
-  const links = currentUser? <SignedInLinks /> : <SignedOutLinks />
   return ( 
-    // <nav className="navbar ">
-    //   <h3 className="brand-logo">CCSuggestor</h3>
-    //     <Link to='/'>Wallet</Link>
-    //     <Link to='/suggest'>Suggest</Link>
-    //     <Link to='/create'>Add New Card</Link>
-    //     {links}
-    // </nav>
-
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Navbar.Brand className="brand-logo">CCSuggestor</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -40,7 +28,6 @@ const MyNavBar = () => {
         }
       </Navbar.Collapse>
     </Navbar>
-    
   );
 }
 export default MyNavBar;

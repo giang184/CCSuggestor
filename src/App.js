@@ -1,4 +1,4 @@
-import Navbar from './components/layout/Navbar';
+import MyNavBar from './components/MyNavBar';
 import Home from './components/Home';
 import Suggest from './components/Suggest';
 import AddCard from './components/AddCard';
@@ -19,7 +19,7 @@ function App() {
     <Router>
       <AuthProvider>
         <div className="App">
-          <Navbar />
+          <MyNavBar />
           <div className="content">
             <Switch>
               <PrivateRoute exact path="/" component={Home}/>
