@@ -167,3 +167,7 @@ h1 {
 .grid {
   margin-left: 20px;
 }
+
+.w-100 {
+  width: 100px;
+}
