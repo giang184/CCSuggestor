@@ -42,10 +42,8 @@ const AddCardTemplates = () => {
       name: 'Chase Sapphire Reserve',
       user: currentUser.email,
       categories: {
+        Travel: 3,
         Dining: 3,
-        Grocery_Stores: 3,
-        Streaming_Services: 3,
-        Travel: 2,
         All_Other_Purchases: 1,
       },
       img: sapphire,
