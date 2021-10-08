@@ -72,7 +72,7 @@ h2 {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 28px;
   margin-bottom: 30px;
   font-weight:600;
 }
@@ -137,6 +137,7 @@ h1 {
   justify-content: space-between;
   margin: 10px;
   width: 250px;
+  font-weight:500;
 }
 
 .card-template-add:hover {
@@ -160,5 +161,9 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 50px;
+}
+
+.grid {
+  margin-left: 50px;
 }

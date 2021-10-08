@@ -125,7 +125,7 @@ const AddCardTemplates = () => {
   return ( 
     <div className="card-list">
       <h1>Click To Add From Selected List:</h1>
-      <Grid fluid>
+      <Grid fluid className="grid">
         <Row>
           {dir.map((card) => (
             <Col sm={12} md={6} lg={4}>

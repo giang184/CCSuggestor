@@ -15,8 +15,8 @@ const Home = () => {
 
   return (  
     <div className="card-list">
-      <h1>What's In Your Wallet:</h1>
-      <Grid fluid>
+      <h1 className="center">What's In Your Wallet:</h1>
+      <Grid fluid className="grid">
         <Row>
           {filterCards.map((card) => (
             <Col sm={12} md={6} lg={4}>
