@@ -1,5 +1,6 @@
 import { useAuth } from "../contexts/AuthContext";
-import {Navbar, Nav} from 'react-bootstrap'
+import {Navbar, Nav} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 const MyNavBar = () => {
   const {currentUser, logout} = useAuth()
@@ -10,20 +11,20 @@ const MyNavBar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href='/'>Wallet</Nav.Link>
-          <Nav.Link href='/suggest'>Suggest</Nav.Link>
-          <Nav.Link href='/create'>Add Card</Nav.Link>
+          <Link to='/'>Wallet</Link>
+          <Link to='/suggest'>Suggest</Link>
+          <Link to='/create'>Add New Card</Link>
         </Nav>
         {!currentUser &&
         <Nav>          
-          <Nav.Link href='/login'>Log In</Nav.Link>
-          <Nav.Link href='/signup'>Sign Up</Nav.Link>
+          <Link to='/login'>Log In</Link>
+          <Link to='/signup'>Sign Up</Link>
         </Nav>
         }
         {currentUser &&
           <Nav>          
-            <Nav.Link href='/login' onClick={logout}>Log Out</Nav.Link>
-            <Nav.Link href='/profile'>{currentUser.email}</Nav.Link>
+            <Link to='/login' onClick={logout}>Log Out</Link>
+            <Link to='/profile'>{currentUser.email}</Link>
           </Nav>
         }
       </Navbar.Collapse>
