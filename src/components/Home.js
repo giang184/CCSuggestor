@@ -15,7 +15,7 @@ const Home = () => {
 
   return (  
     <div className="card-list">
-      <h1 className="center">What's In Your Wallet:</h1>
+      <h1 className="card-list">What's In Your Wallet:</h1>
       <Grid fluid className="grid">
         <Row>
           {filterCards.map((card) => (
