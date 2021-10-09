@@ -14,7 +14,7 @@ const Suggest = () => {
   return ( 
     <>
     <div className="test">
-    <h1>Rank Card By Purchase Category:</h1>
+    <h1>Rank By Category:</h1>
     <Grid>
       <Row>
       <Col sm={4} md={2} lg={1}>

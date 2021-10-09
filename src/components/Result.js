@@ -26,7 +26,7 @@ const Result = ({selectedCategory}) => {
   });
 
   return (  
-    <div className="card-list">
+    <div className="suggest-list">
           {selectedCategory && filterCards.map((card) => (
               <div className="card-preview" key={card.id}>
                 <Link to={`/cards/${card.id}`}>

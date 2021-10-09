@@ -24,7 +24,7 @@
   background-color: rgb(46, 46, 51);
 }
 .navbar .brand-logo:hover {
-  color: #f1356d !important;
+  color: #f1356d;
 }
 
 .navbar a {
@@ -32,11 +32,11 @@
   padding: 6px;
   font-weight: 500;
   background-color: rgb(46, 46, 51);
-  color: white !important;
+  color: white;
 }
 
 .navbar a:hover {
-  color: #f1356d !important;
+  color: #f1356d;
 }
 
 #responsive-navbar-nav {
@@ -166,6 +166,10 @@ h1 {
 
 .grid {
   margin-left: 20px;
+}
+
+.suggest-list {
+  margin-left: 35px;
 }
 
 .w-100 {

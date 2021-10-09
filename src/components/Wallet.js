@@ -8,7 +8,7 @@ import mastercard from './../img/mastercard.png'
 import amex from './../img/amex.png'
 import discover from './../img/discover.png'
 
-const Home = () => {
+const Wallet = () => {
   const { currentUser } = useAuth()
   const {cards} = useFirestore('cards')
   const filterCards=cards.filter(card => card.user === currentUser.email)
@@ -49,4 +49,4 @@ const Home = () => {
     </div>
   );
 }
-export default Home;
+export default Wallet;

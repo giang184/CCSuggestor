@@ -7,7 +7,7 @@ const MyNavBar = () => {
   console.log('nav',currentUser)
   return ( 
     <Navbar collapseOnSelect expand="lg" className="navbar">
-      <Navbar.Brand className="brand-logo">CCSuggestor</Navbar.Brand>
+      <Navbar.Brand  className="brand-logo" href="/">CCSuggestor</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">

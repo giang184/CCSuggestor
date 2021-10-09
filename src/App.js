@@ -1,5 +1,5 @@
 import MyNavBar from './components/MyNavBar';
-import Home from './components/Home';
+import Wallet from './components/Wallet';
 import Suggest from './components/Suggest';
 import AddCard from './components/AddCard';
 import CardDetails from './components/CardDetails'
@@ -22,7 +22,7 @@ function App() {
           <MyNavBar />
           <div className="content">
             <Switch>
-              <PrivateRoute exact path="/" component={Home}/>
+              <PrivateRoute exact path="/" component={Wallet}/>
               <PrivateRoute exact path="/suggest" component={Suggest}/>
               <PrivateRoute exact path="/create" component={AddCard}/>
               <PrivateRoute exact path="/cards/:id" component={CardDetails}/>
