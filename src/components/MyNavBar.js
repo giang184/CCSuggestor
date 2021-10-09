@@ -11,7 +11,7 @@ const MyNavBar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Link to='/'>Wallet</Link>
+          <Link to='/wallet'>Wallet</Link>
           <Link to='/suggest'>Suggest</Link>
           <Link to='/create'>Add Card</Link>
         </Nav>

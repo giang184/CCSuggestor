@@ -13,6 +13,7 @@ import Profile from './components/Profile';
 import PrivateRoute from './components/PrivateRoute';
 import ForgotPassword from './components/ForgotPassword';
 import UpdateProfile from './components/UpdateProfile';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <MyNavBar />
           <div className="content">
             <Switch>
-              <PrivateRoute exact path="/" component={Wallet}/>
+              <Route exact path="/" component={Home}/>
+              <PrivateRoute exact path="/wallet" component={Wallet}/>
               <PrivateRoute exact path="/suggest" component={Suggest}/>
               <PrivateRoute exact path="/create" component={AddCard}/>
               <PrivateRoute exact path="/cards/:id" component={CardDetails}/>

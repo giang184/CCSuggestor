@@ -175,3 +175,20 @@ h1 {
 .w-100 {
   width: 100px;
 }
+
+.home h1 {
+  font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight:700;
+  color: #f1356d;
+}
+li {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+a {
+  text-decoration: none;
+  font-weight:550;
+}
