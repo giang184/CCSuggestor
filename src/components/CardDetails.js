@@ -10,24 +10,43 @@ const CardDetails = () => {
 
   async function handleClick () {
     await projectFirestore.collection('cards').doc(id).delete();
-    history.push('/');
+    history.push('/wallet');
   }
 
   return (  
     <div className="card-details">
       <div>
         {card &&
-        <article>
-          <h2 style={{color: "#f1356d"}}>{card.name}</h2>
+        <div className="card-template-list">
+          <h2 style={{'text-align': "center", color: "#f1356d"}}>{card.name}</h2>
           <img src={card.img} class="card-img" alt={card.name}/>
-          <h4>Rewards: </h4>
-          <ul>
-            {card.categories && Object.entries(card.categories).map(([key, val]) => 
-              <li key={key}>{key}: {val}%</li>
-            )}
-          </ul>
-          <button onClick={handleClick}>delete</button>
-        </article>}
+          <div className="card-body">
+            <h5 className="card-title">Cash Back Rewards:</h5>
+            <ul>
+              {
+                  card.categories && Object.entries(card.categories).sort((a, b) => a[1] - b[1]).reverse().map(([key, val]) => 
+                      <li key={key}>{key}: {val}%</li>
+                  )
+              }
+            </ul>
+            <div className="center">
+              <button onClick={handleClick}>delete</button>
+            </div>
+          </div>
+        </div>
+
+        // <article>
+        //   <h2 style={{'text-align': "center", color: "#f1356d"}}>{card.name}</h2>
+        //   <img src={card.img} class="card-img" alt={card.name}/>
+        //   <h4>Cash Back Rewards: </h4>
+        //   <ul>
+        //     {card.categories && Object.entries(card.categories).map(([key, val]) => 
+        //       <li key={key}>{key}: {val}%</li>
+        //     )}
+        //   </ul>
+        //   <button onClick={handleClick}>delete</button>
+        // </article>
+      }
       </div>
     </div>
   );
