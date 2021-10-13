@@ -30,7 +30,7 @@ const CardDetails = () => {
               }
             </ul>
             <div className="center">
-              <button onClick={handleClick}>delete</button>
+              <button onClick={handleClick}>Delete</button>
             </div>
           </div>
         </div>
