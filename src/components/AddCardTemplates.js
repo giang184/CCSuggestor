@@ -116,7 +116,7 @@ const AddCardTemplates = () => {
     event.preventDefault();
     const collectionRef = projectFirestore.collection('cards');
     collectionRef.add(card);
-    history.push('/');
+    history.push('/wallet');
     console.log(card);
     };
 

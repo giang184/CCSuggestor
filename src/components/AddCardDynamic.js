@@ -147,7 +147,7 @@ const AddCardDynamic = () => {
     event.preventDefault();
     const collectionRef = projectFirestore.collection('cards');
     collectionRef.add(formState);
-    history.push('/');
+    history.push('/wallet');
   }
 
   return (
