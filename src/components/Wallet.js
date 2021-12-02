@@ -23,7 +23,7 @@ const Wallet = () => {
               <div className="card-preview" key={card.id}>
                 <Link to={`/cards/${card.id}`}>
                   <div className="card-template-list">
-                    <h2 style={{'text-align': "center", color: "#f1356d"}}>{card.name}</h2>
+                    <h2 style={{textAlign: "center", color: "#f1356d"}}>{card.name}</h2>
                     {card.img && <img src={card.img} class="card-img" alt={card.name}/>}
                     {!card.img && card.type === 'visa' && <img src={visa} class="card-img" alt="visa"/>}
                     {!card.img && card.type === 'mastercard' && <img src={mastercard} class="card-img" alt="mastercard"/>}

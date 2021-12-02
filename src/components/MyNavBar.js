@@ -5,7 +5,9 @@ import {Link} from 'react-router-dom';
 const MyNavBar = () => {
   const {currentUser, logout} = useAuth()
   console.log('nav',currentUser)
-  return ( 
+  console.log('without paren',useAuth)
+  console.log('with paren',useAuth())
+  return (
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Navbar.Brand  className="brand-logo" href="/">CCSuggestor</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -18,7 +18,7 @@ const CardDetails = () => {
       <div>
         {card &&
         <div className="card-template-list">
-          <h2 style={{'text-align': "center", color: "#f1356d"}}>{card.name}</h2>
+          <h2 style={{'textAlign': "center", color: "#f1356d"}}>{card.name}</h2>
           <img src={card.img} class="card-img" alt={card.name}/>
           <div className="card-body">
             <h5 className="card-title">Cash Back Rewards:</h5>
@@ -36,7 +36,7 @@ const CardDetails = () => {
         </div>
 
         // <article>
-        //   <h2 style={{'text-align': "center", color: "#f1356d"}}>{card.name}</h2>
+        //   <h2 style={{'textAlign': "center", color: "#f1356d"}}>{card.name}</h2>
         //   <img src={card.img} class="card-img" alt={card.name}/>
         //   <h4>Cash Back Rewards: </h4>
         //   <ul>

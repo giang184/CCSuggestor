@@ -129,7 +129,7 @@ const AddCardTemplates = () => {
             <Col sm={12} md={6} lg={4}>
               <div className="card-preview" onClick={(event) => handleClick(event, card)}>
                 <div className="card-template-list">
-                  <h2 style={{'text-align': "center", color: "#f1356d"}}>{card.name}</h2>
+                  <h2 style={{textAlign: "center", color: "#f1356d"}}>{card.name}</h2>
                   <img src={card.img} class="card-img" alt={card.name}/>
                   <div className="card-body">
                     <h5 className="card-title">Cash Back Rewards</h5>

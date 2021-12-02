@@ -13,7 +13,6 @@ const useFirestore = (collection) => {
         });
         setCards(cards);
       });
-
     return () => unsub();
     // this is a cleanup function that react will run when
     // a component using the hook unmounts
