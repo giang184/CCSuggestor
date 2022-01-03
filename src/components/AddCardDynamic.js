@@ -43,6 +43,8 @@ const AddCardDynamic = () => {
     'Best_Buy',
     'Transit',
     'Entertainment',
+    'Ebay',
+    'Fitness_Clubs',
     'All_Other_Purchases'
   ]
 

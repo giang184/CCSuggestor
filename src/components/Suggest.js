@@ -48,6 +48,8 @@ const Suggest = () => {
                     <option value='Best_Buy'>Best_Buy</option>
                     <option value='Transit'>Transit</option>
                     <option value='Entertainment'>Entertainment</option>
+                    <option value='Ebay'>Ebay</option>
+                    <option value='Fitness_Clubs'>Fitness_Clubs</option>
                     <option value='All_Other_Purchases'>All_Other_Purchases</option>
                   </select>
                 </div>

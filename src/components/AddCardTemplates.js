@@ -30,8 +30,8 @@ const AddCardTemplates = () => {
       name: 'Chase Freedom Flex',
       user: currentUser.email,
       categories: {
-        Paypal: 5,
-        Walmart: 5,
+        Grocery_Stores: 5,
+        Ebay: 5,
         Dining: 3,
         Drug_Stores: 3,
         All_Other_Purchases: 1
@@ -52,9 +52,8 @@ const AddCardTemplates = () => {
       name: 'Discover it',
       user: currentUser.email,
       categories: {
-        Amazon: 5,
-        Walmart: 5,
-        Target: 5,
+        Grocery_Stores: 5,
+        Fitness_Clubs: 5,
         All_Other_Purchases: 1,
       },
       img: discoverit,
